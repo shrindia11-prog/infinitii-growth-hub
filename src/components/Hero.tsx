@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo-cream.png";
 
 const Hero = () => {
   return (
@@ -22,7 +22,7 @@ const Hero = () => {
             <img
               src={logo}
               alt="Infinitii Management Consulting"
-              className="h-32 md:h-44 mx-auto object-contain mix-blend-multiply"
+              className="h-32 md:h-44 mx-auto object-contain"
             />
           </div>
 
