@@ -13,8 +13,8 @@
 
 @layer base {
   :root {
-    /* Warm cream/beige background from logo */
-    --background: 38 28% 92%;
+    /* Warm cream/beige background from logo - #d5cbb6 */
+    --background: 41 27% 77%;
     --foreground: 220 25% 20%;
 
     --card: 40 25% 95%;
