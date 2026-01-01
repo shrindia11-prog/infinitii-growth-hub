@@ -19,16 +19,10 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto text-center">
           {/* Logo */}
           <div className="mb-8 animate-fade-up" style={{ animationDelay: "0.1s" }}>
-            <div 
-              className="h-32 md:h-44 w-full max-w-md mx-auto"
-              style={{
-                backgroundImage: `url(${logo})`,
-                backgroundSize: 'contain',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat',
-                backgroundBlendMode: 'multiply',
-                backgroundColor: 'hsl(41 27% 77%)',
-              }}
+            <img
+              src={logo}
+              alt="Infinitii Management Consulting"
+              className="h-32 md:h-44 mx-auto object-contain mix-blend-multiply"
             />
           </div>
 
