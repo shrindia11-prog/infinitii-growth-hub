@@ -16,11 +16,11 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
 
-const formSchema = z.zod.object({
+const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Invalid email address"),
   company: z.string().min(2, "Company name is required"),
-  message: z.string().min(10, "Please provide some details about your needs"),
+  message: z.string().min(10, "Please provide some more details"),
 });
 
 export function ConsultationForm() {
