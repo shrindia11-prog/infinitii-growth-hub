@@ -2,7 +2,6 @@ import Header from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "@/assets/logo-cream.png";
 
 const Index = () => {
   return (
@@ -29,22 +28,10 @@ const Index = () => {
           
           {/* Left: Content */}
           <div className="order-2 lg:order-1 text-center lg:text-left">
-            {/* Logo */}
-            <div 
-              className="mb-6 animate-fade-up"
-              style={{ animationDelay: "0.1s" }}
-            >
-              <img
-                src={logo}
-                alt="Infinitii Management Consulting"
-                className="h-20 md:h-24 mx-auto lg:mx-0 object-contain"
-              />
-            </div>
-
             {/* Divider line */}
             <div 
               className="w-16 h-[2px] bg-gradient-to-r from-navy to-navy/30 mb-6 mx-auto lg:mx-0 animate-fade-up"
-              style={{ animationDelay: "0.2s", opacity: 0, animationFillMode: "forwards" }}
+              style={{ animationDelay: "0.1s", opacity: 0, animationFillMode: "forwards" }}
             />
 
             {/* Headline */}
