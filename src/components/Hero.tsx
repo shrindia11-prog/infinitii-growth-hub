@@ -1,6 +1,8 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo-cream.png";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { ConsultationForm } from "./ConsultationForm";
 
 const Hero = () => {
   return (
@@ -57,10 +59,20 @@ const Hero = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up"
             style={{ animationDelay: "0.6s", opacity: 0 }}
           >
-            <Button variant="navy" size="lg" className="group">
-              Schedule Consultation
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button variant="navy" size="lg" className="group">
+                  Schedule Consultation
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-[425px]">
+                <DialogHeader>
+                  <DialogTitle>Request a Free Consultation</DialogTitle>
+                </DialogHeader>
+                <ConsultationForm />
+              </DialogContent>
+            </Dialog>
             <Button variant="outline" size="lg">
               Explore Services
             </Button>

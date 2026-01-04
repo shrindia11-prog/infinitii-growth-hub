@@ -1,5 +1,7 @@
 import { ArrowRight, Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { ConsultationForm } from "./ConsultationForm";
 
 const Contact = () => {
   return (
@@ -25,10 +27,20 @@ const Contact = () => {
                 objectives and unlock new opportunities for growth.
               </p>
 
-              <Button variant="navy" size="lg" className="group mb-12">
-                Book a Free Consultation
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button variant="navy" size="lg" className="group mb-12">
+                    Book a Free Consultation
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-[425px]">
+                  <DialogHeader>
+                    <DialogTitle>Request a Free Consultation</DialogTitle>
+                  </DialogHeader>
+                  <ConsultationForm />
+                </DialogContent>
+              </Dialog>
 
               {/* Contact Info */}
               <div className="grid sm:grid-cols-3 gap-6 pt-8 border-t border-border/50">
