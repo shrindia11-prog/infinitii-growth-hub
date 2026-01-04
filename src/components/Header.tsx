@@ -40,9 +40,11 @@ const Header = () => {
                 {item.label}
               </Link>
             ))}
-            <Button variant="navy" size="sm">
-              Get Started
-            </Button>
+            <Link to="/get-started">
+              <Button variant="navy" size="sm">
+                Get Started
+              </Button>
+            </Link>
           </nav>
 
           {/* Mobile Menu Toggle */}
@@ -73,9 +75,11 @@ const Header = () => {
                   {item.label}
                 </Link>
               ))}
-              <Button variant="navy" className="mt-2 w-full">
-                Get Started
-              </Button>
+              <Link to="/get-started" onClick={() => setIsOpen(false)}>
+                <Button variant="navy" className="mt-2 w-full">
+                  Get Started
+                </Button>
+              </Link>
             </div>
           </nav>
         )}
