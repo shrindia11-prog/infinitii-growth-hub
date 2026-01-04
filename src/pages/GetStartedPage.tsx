@@ -5,7 +5,7 @@ import { CheckCircle2 } from "lucide-react";
 
 const GetStartedPage = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-background text-foreground">
       <Header />
       <main className="flex-1 pt-24 pb-16">
         <div className="container mx-auto px-6">
@@ -24,7 +24,7 @@ const GetStartedPage = () => {
                 </div>
 
                 <div className="space-y-4">
-                  <h3 className="text-xl font-semibold text-foreground">What to expect:</h3>
+                  <h3 className="text-xl font-semibold text-foreground border-b border-border pb-2">What to expect:</h3>
                   <ul className="space-y-4">
                     {[
                       "A comprehensive 30-minute strategic evaluation",
@@ -33,7 +33,7 @@ const GetStartedPage = () => {
                       "Personalized consultation with a senior partner"
                     ].map((item, index) => (
                       <li key={index} className="flex items-start gap-3">
-                        <CheckCircle2 className="w-6 h-6 text-navy shrink-0" />
+                        <CheckCircle2 className="w-6 h-6 text-primary shrink-0" />
                         <span className="text-muted-foreground">{item}</span>
                       </li>
                     ))}
@@ -52,7 +52,7 @@ const GetStartedPage = () => {
 
               {/* Form Container */}
               <div className="bg-card rounded-2xl shadow-elevated border border-border/50 p-8 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-                <h2 className="text-2xl font-semibold mb-6">Request Your Consultation</h2>
+                <h2 className="text-2xl font-semibold mb-6 text-foreground">Request Your Consultation</h2>
                 <ConsultationForm />
                 <p className="mt-6 text-xs text-center text-muted-foreground">
                   By submitting this form, you agree to our privacy policy and 
