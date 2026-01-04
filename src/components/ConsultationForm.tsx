@@ -81,15 +81,19 @@ export function ConsultationForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 text-left">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 text-left p-6 bg-secondary/20 rounded-xl border border-border/50">
         <FormField
           control={form.control}
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Name</FormLabel>
+              <FormLabel className="text-foreground font-medium">Name</FormLabel>
               <FormControl>
-                <Input placeholder="John Doe" {...field} />
+                <Input 
+                  placeholder="John Doe" 
+                  className="bg-background border-border focus:border-primary focus:ring-primary/20 text-foreground placeholder:text-muted-foreground/50" 
+                  {...field} 
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -100,9 +104,13 @@ export function ConsultationForm() {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel className="text-foreground font-medium">Email</FormLabel>
               <FormControl>
-                <Input placeholder="john@example.com" {...field} />
+                <Input 
+                  placeholder="john@example.com" 
+                  className="bg-background border-border focus:border-primary focus:ring-primary/20 text-foreground placeholder:text-muted-foreground/50" 
+                  {...field} 
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -113,9 +121,13 @@ export function ConsultationForm() {
           name="company"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Company</FormLabel>
+              <FormLabel className="text-foreground font-medium">Company</FormLabel>
               <FormControl>
-                <Input placeholder="Company name" {...field} />
+                <Input 
+                  placeholder="Company name" 
+                  className="bg-background border-border focus:border-primary focus:ring-primary/20 text-foreground placeholder:text-muted-foreground/50" 
+                  {...field} 
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -126,11 +138,11 @@ export function ConsultationForm() {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Message</FormLabel>
+              <FormLabel className="text-foreground font-medium">Message</FormLabel>
               <FormControl>
                 <Textarea 
                   placeholder="How can we help you?" 
-                  className="min-h-[100px]"
+                  className="min-h-[100px] bg-background border-border focus:border-primary focus:ring-primary/20 text-foreground placeholder:text-muted-foreground/50"
                   {...field} 
                 />
               </FormControl>
@@ -138,7 +150,7 @@ export function ConsultationForm() {
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-full" disabled={isSubmitting}>
+        <Button type="submit" variant="navy" className="w-full shadow-elevated hover-elevate active-elevate-2 transition-all duration-300" disabled={isSubmitting}>
           {isSubmitting ? (
             <>
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
