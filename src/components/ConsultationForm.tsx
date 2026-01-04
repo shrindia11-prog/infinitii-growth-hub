@@ -56,9 +56,16 @@ export function ConsultationForm() {
       }
 
       console.log("Form submitted:", values);
+      
+      // Play a subtle success sound
+      const audio = new Audio("https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3");
+      audio.volume = 0.3;
+      audio.play().catch(() => {}); // Catch and ignore if browser blocks autoplay
+
       toast({
-        title: "Request Sent",
-        description: "We've received your request and will contact you shortly.",
+        title: "Success! 🎉",
+        description: "Your consultation request has been received. One of our experts will contact you within 24 hours.",
+        variant: "default",
       });
       form.reset();
     } catch (error) {
