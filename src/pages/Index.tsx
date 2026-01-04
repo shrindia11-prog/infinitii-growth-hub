@@ -1,53 +1,105 @@
 import Header from "@/components/Header";
+import logo from "@/assets/logo-cream.png";
 
 const Index = () => {
   return (
     <div className="h-screen bg-background overflow-hidden flex flex-col relative">
-      {/* Subtle animated background elements */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-1/4 -right-20 w-80 h-80 bg-navy/5 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 -left-20 w-64 h-64 bg-accent/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
+      {/* Elegant background pattern */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Subtle grid pattern */}
+        <div 
+          className="absolute inset-0 opacity-[0.02]"
+          style={{
+            backgroundImage: `linear-gradient(rgba(26, 54, 93, 0.3) 1px, transparent 1px), 
+                              linear-gradient(90deg, rgba(26, 54, 93, 0.3) 1px, transparent 1px)`,
+            backgroundSize: '60px 60px'
+          }}
+        />
+        {/* Radial gradient accent */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-navy/5 to-transparent rounded-full blur-3xl" />
       </div>
 
       <Header />
       
-      <main className="flex-1 flex flex-col items-center justify-center pt-20 px-6 relative z-10">
-        {/* Video Container with animation */}
-        <div 
-          className="w-full max-w-4xl aspect-video bg-navy/10 rounded-2xl overflow-hidden shadow-elevated mb-8 animate-fade-up ring-1 ring-border/30 hover:ring-navy/20 transition-all duration-500 hover:shadow-glow"
-          style={{ animationDelay: "0.1s" }}
-        >
-          <video
-            className="w-full h-full object-cover"
-            autoPlay
-            muted
-            loop
-            playsInline
-            poster=""
-          >
-            {/* Replace src with your video URL */}
-            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
+      <main className="flex-1 flex items-center justify-center pt-20 px-6 md:px-12 relative z-10">
+        <div className="w-full max-w-7xl grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+          
+          {/* Left: Content */}
+          <div className="order-2 lg:order-1 text-center lg:text-left">
+            {/* Logo */}
+            <div 
+              className="mb-6 animate-fade-up"
+              style={{ animationDelay: "0.1s" }}
+            >
+              <img
+                src={logo}
+                alt="Infinitii Management Consulting"
+                className="h-20 md:h-24 mx-auto lg:mx-0 object-contain"
+              />
+            </div>
 
-        {/* Two Lines of Text with staggered animation */}
-        <div className="text-center max-w-2xl">
-          <h1 
-            className="text-2xl md:text-3xl lg:text-4xl font-display font-semibold text-foreground mb-3 animate-fade-up"
-            style={{ animationDelay: "0.3s", opacity: 0, animationFillMode: "forwards" }}
+            {/* Divider line */}
+            <div 
+              className="w-16 h-[2px] bg-gradient-to-r from-navy to-navy/30 mb-6 mx-auto lg:mx-0 animate-fade-up"
+              style={{ animationDelay: "0.2s", opacity: 0, animationFillMode: "forwards" }}
+            />
+
+            {/* Headline */}
+            <h1 
+              className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-display font-semibold text-foreground leading-tight mb-4 animate-fade-up"
+              style={{ animationDelay: "0.3s", opacity: 0, animationFillMode: "forwards" }}
+            >
+              Transforming Vision Into{" "}
+              <span className="text-metallic">Infinite Possibilities</span>
+            </h1>
+
+            {/* Subheadline */}
+            <p 
+              className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto lg:mx-0 animate-fade-up"
+              style={{ animationDelay: "0.4s", opacity: 0, animationFillMode: "forwards" }}
+            >
+              Strategic consulting solutions that drive growth and unlock your organization's full potential.
+            </p>
+          </div>
+
+          {/* Right: Video */}
+          <div 
+            className="order-1 lg:order-2 animate-fade-up"
+            style={{ animationDelay: "0.2s" }}
           >
-            Transforming Vision Into{" "}
-            <span className="text-metallic bg-clip-text animate-shimmer">Infinite Possibilities</span>
-          </h1>
-          <p 
-            className="text-base md:text-lg text-muted-foreground animate-fade-up"
-            style={{ animationDelay: "0.5s", opacity: 0, animationFillMode: "forwards" }}
-          >
-            Strategic consulting solutions that drive growth and unlock your organization's full potential.
-          </p>
+            <div className="relative">
+              {/* Decorative frame */}
+              <div className="absolute -inset-3 bg-gradient-to-br from-navy/20 via-transparent to-accent/20 rounded-2xl blur-sm" />
+              <div className="absolute -inset-[1px] bg-gradient-to-br from-navy/30 to-navy/10 rounded-xl" />
+              
+              {/* Video container */}
+              <div className="relative aspect-[4/3] md:aspect-video rounded-xl overflow-hidden shadow-elevated bg-navy/5">
+                <video
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                >
+                  <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                
+                {/* Subtle overlay for polish */}
+                <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent pointer-events-none" />
+              </div>
+
+              {/* Corner accents */}
+              <div className="absolute -top-2 -left-2 w-6 h-6 border-l-2 border-t-2 border-navy/40 rounded-tl-lg" />
+              <div className="absolute -bottom-2 -right-2 w-6 h-6 border-r-2 border-b-2 border-navy/40 rounded-br-lg" />
+            </div>
+          </div>
+
         </div>
       </main>
+
+      {/* Bottom accent line */}
+      <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-navy/20 to-transparent" />
     </div>
   );
 };
