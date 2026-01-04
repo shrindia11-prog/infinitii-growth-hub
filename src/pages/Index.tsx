@@ -1,4 +1,7 @@
 import Header from "@/components/Header";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo-cream.png";
 
 const Index = () => {
@@ -55,11 +58,29 @@ const Index = () => {
 
             {/* Subheadline */}
             <p 
-              className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto lg:mx-0 animate-fade-up"
+              className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8 animate-fade-up"
               style={{ animationDelay: "0.4s", opacity: 0, animationFillMode: "forwards" }}
             >
               Strategic consulting solutions that drive growth and unlock your organization's full potential.
             </p>
+
+            {/* CTA Buttons */}
+            <div 
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-up"
+              style={{ animationDelay: "0.5s", opacity: 0, animationFillMode: "forwards" }}
+            >
+              <Link to="/contact">
+                <Button variant="navy" size="lg" className="group w-full sm:w-auto">
+                  Schedule Consultation
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </Link>
+              <Link to="/services">
+                <Button variant="outline" size="lg" className="w-full sm:w-auto">
+                  Learn More
+                </Button>
+              </Link>
+            </div>
           </div>
 
           {/* Right: Video */}
