@@ -20,7 +20,8 @@ const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Invalid email address"),
   company: z.string().min(2, "Company name is required"),
-  message: z.string().min(10, "Please provide some more details"),
+  location: z.string().min(2, "Location is required"),
+  service: z.string().min(10, "Please provide some more details about the service"),
 });
 
 export function ConsultationForm() {
@@ -33,27 +34,24 @@ export function ConsultationForm() {
       name: "",
       email: "",
       company: "",
-      message: "",
+      location: "",
+      service: "",
     },
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
     try {
-      // THE LINK FOR GOOGLE SHEETS INTEGRATION GOES HERE
-      // You should replace this with your Google Sheets Apps Script URL
-      const GOOGLE_SHEETS_URL = "YOUR_GOOGLE_SHEETS_SCRIPT_URL_HERE";
+      const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbzpviuJrRHB0gfkSgjzD5XYAOTMifKh9y9mlx2KhGk5b6s-pFmwJzccfetopLwgnNQNtw/exec";
 
-      if (GOOGLE_SHEETS_URL !== "YOUR_GOOGLE_SHEETS_SCRIPT_URL_HERE") {
-        await fetch(GOOGLE_SHEETS_URL, {
-          method: "POST",
-          mode: "no-cors",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(values),
-        });
-      }
+      await fetch(GOOGLE_SHEETS_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
 
       console.log("Form submitted:", values);
       
@@ -135,13 +133,30 @@ export function ConsultationForm() {
         />
         <FormField
           control={form.control}
-          name="message"
+          name="location"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-foreground font-medium">Message</FormLabel>
+              <FormLabel className="text-foreground font-medium">Location</FormLabel>
+              <FormControl>
+                <Input 
+                  placeholder="City, Country" 
+                  className="bg-background border-border focus:border-primary focus:ring-primary/20 text-foreground placeholder:text-muted-foreground/50" 
+                  {...field} 
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="service"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel className="text-foreground font-medium">Service Required</FormLabel>
               <FormControl>
                 <Textarea 
-                  placeholder="How can we help you?" 
+                  placeholder="What service are you looking for?" 
                   className="min-h-[100px] bg-background border-border focus:border-primary focus:ring-primary/20 text-foreground placeholder:text-muted-foreground/50"
                   {...field} 
                 />
